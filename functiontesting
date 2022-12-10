@@ -1,0 +1,8 @@
+<?php
+   function addNum($first,$second){
+   $sum=$first+$second;
+   echo "and the some of  ".$first." and ".$second ." is ".$sum;
+   }
+   $test=$1
+
+?>

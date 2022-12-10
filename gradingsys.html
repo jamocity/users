@@ -1,0 +1,69 @@
+<!Doctype>
+
+<html>
+<head>
+   <title>
+   	A grading system
+   </title>
+   <link rel="stylesheet"
+          href=
+"bootstrap-5.0.0-dist/css/bootstrap.css">
+        <script src="bootstrap-5.0.0-dist/js/bootstrap.bundle.js"></script>
+      <style> td{width:200px;
+      	border-collapse: collapse;
+      	border-spacing: 2;
+      	border:2;}
+      	</style>
+</head>
+<body>
+  <header class="container-fluid fixed-top  text-dark"><h3>A Grading System</h3></header><br/><hr><br/>
+   <div class="container">
+   	<form>
+   		<pre>
+     <div class="col"><label>Enter FullName</label>  <input id="inp1"/></div>
+     <div class="col"><label>Enter Test Score</label><input id="inp2"/></div>
+     <div class="col"><label>Enter Exam Score</label><input id="inp3"/></div>
+     <input class="btn btn-primary float-end"value="submit" type="button"/>
+   	   </pre>
+   	</form>
+
+     <table border="1">
+      <th>
+      	<td>full name</td>
+        <td>text score</td>
+        <td>exam score</td>
+        <td>total score</td>
+        <td>Grade</td>
+        
+      </th>
+        <?php
+
+       if ($result3->num_rows > 0) {
+        
+  while($row3 = $result3->fetch_assoc()) {
+    $id=$row3['id'];
+     $username=$row3['username'];
+     $email=$row3['email'];
+    $contact=$row3['contact'];
+    $gender=$row['gender'];
+    echo "<tr class='fluid' bgcolor='aliceblue' border='1'>
+    <td>$username</td>
+    <td>$email</td>
+    <td>$contact</td>
+    <td>$gender</td>
+    <td><button class='btn btn-danger'><a href='delete.php?deleteid=$id' class='text-light'style='text-decoration:none;'>delete</a></button>"."</td>
+    <td><button class='btn btn-primary'><a href='update.php?updateid=$id' class='text-light' style='text-decoration:none;'>update</a></button></td>
+    </tr>";
+  }
+       }
+    ?>
+
+     </table>
+   </div>
+
+</body>
+
+
+
+
+</html>
